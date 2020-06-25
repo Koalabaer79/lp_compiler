@@ -22,8 +22,8 @@ Use your own templates to use them for new projects
 To ensure that you have all neccessary tools
 
 ### Gulp Commands
-- gulp new --project test1
+- gulp new --project test1<br/>
 Create new Project with _default template
 
-- gulp new --project test1 --template xyz
+- gulp new --project test1 --template xyz<br/>
 Create new Project with defined template in template folder
