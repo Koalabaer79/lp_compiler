@@ -32,4 +32,4 @@ Use your own templates to use them for new projects
 <i>Compiling your files into the "_dist" folder and watch "index.html" life in browser</i>
 
 - <b>gulp watch --file xyz</b><br/>
-<i>Compiling all files from project into the "_dist" folder and watch "xyz.html" - <span style="color:red;">full path of html file required</style></i>
+<i>Compiling all files from project into the "_dist" folder and watch "xyz.html" - <span style="color:red;">full path of html file required</span></i>
