@@ -18,12 +18,12 @@ Use your own templates to use them for new projects
 ## Commands
 
 ### Getting Started with
-- npm install
-To ensure that you have all neccessary tools
+- <b>npm install</b><br/>
+<i>To ensure that you have all neccessary tools</i>
 
 ### Gulp Commands
-- gulp new --project test1<br/>
-Create new Project with _default template
+- <b>gulp new --project test1</b><br/>
+<i>Create new Project with _default template</i>
 
-- gulp new --project test1 --template xyz<br/>
-Create new Project with defined template in template folder
+- <b>gulp new --project test1 --template xyz</b><br/>
+<i>Create new Project with defined template in template folder</i>
