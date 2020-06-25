@@ -1,0 +1,1 @@
+var holyboly=1;1==holyboly&&console.log("Holyboly!");
