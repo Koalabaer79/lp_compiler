@@ -31,9 +31,9 @@ Use your own templates to use them for new projects
 - <b>gulp watch</b><br />
 <i>Compiling your files into the "_dist" folder and watch "index.html" life in browser</i>
 
-- <b>gulp watch --file xyz</b><br />
+- <b>gulp watch --file xyz.html</b><br />
 <i>Compiling all files from project into the "_dist" folder and watch specified "xyz.html"<br />
-xyz --> full path of html file required</i>
+xyz.html --> full path of html file required</i>
 
 ### node Commands
 - <b>node bakery.js --project test1</b><br />
