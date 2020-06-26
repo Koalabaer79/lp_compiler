@@ -142,7 +142,7 @@ function replaceContent(data,files) {
                     newKey = key.replace('-min', "");
                     var tag = '<script src="./js/'+newKey+'"></script>';
                     if(content.includes(tag)) {
-                        var jsContent = '<scrit>'+data[key].toString()+'</script>';
+                        var jsContent = '<script>'+data[key].toString()+'</script>';
                         content = content.replace(tag, jsContent);
                     }
                 }

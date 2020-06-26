@@ -1,16 +1,16 @@
 # Landing Page Compiler from Lars Urban
 
 ### Pug
-For easy programming this compiler uses pug files
+For easy programming this compiler uses PUG files
 
 ### Sass
 This compiler uses SASS stylesheets to enable functions and variables for layouting
 
 ### Gulp
-With the gulpfile.js it is possible to create new projects, watch and compile pug files
+With the gulpfile.js it is possible to create new projects, watch and compile PUG files as well as SCSS files
 
 ### nodeJS
-To export your projects this compiler uses nodeJS to create inline html files with all style and js included
+To export your projects this compiler uses nodeJS to create inline HTML files with all style and js included
 
 ### Templates
 Use your own templates to use them for new projects
@@ -41,9 +41,9 @@ xyz.html --> full path of html file required</i>
 Copy the complete path of project folder "text1" (as example)</i>
 
 ### PUG files
-I've created the "index.pug", which will be compiled into "index.html". You can add an individual pug-file (f.e. "test.pug") in the same folder as "index.pug" and it will be compiled into "test.html".
+I've created the "index.pug", which will be compiled into "index.html". You can add an individual PUG file (f.e. "test.pug") in the same folder as "index.pug" and it will be compiled into "test.html".
 
-The folder "_shared" includes the menu and footer pug-file, which can be included in your individual pug-files and you only need to change the menu once, as it is implemented in all parent files.
+The folder "_shared" includes the menu and footer pug-file, which can be included in your individual PUG files and you only need to change the menu once, as it is implemented in all parent files.
 
 ### SCSS files
-I only have one SCSS file, which is included in the pug-file. You can feel free to add more SCSS files, maybe in a separate folder, and import them into your "style.scss". Then it will be included automatically inline in your exported html file.
+I only have one SCSS file, which is included in the pug-file. You can feel free to add more SCSS files, maybe in a separate folder, and import them into your "style.scss". Then it will be included automatically inline in your exported HTML file.
