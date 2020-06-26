@@ -33,12 +33,12 @@ Use your own templates to use them for new projects
 
 - <b>gulp watch --file xyz</b><br />
 <i>Compiling all files from project into the "_dist" folder and watch specified "xyz.html"<br />
-full path of html file required</i>
+xyz --> full path of html file required</i>
 
 ### node Commands
 - <b>node bakery.js --project test1</b><br />
-<i>Export desired Project and create inline HTML code including all CSS and JS code.<br />
-Copy complete path of project folder "text1" (as example)</i>
+<i>Export desired project and create inline HTML code including all CSS code, JS code and images in a timestamped "_export" folder.<br />
+Copy the complete path of project folder "text1" (as example)</i>
 
 ### PUG files
 I've created the "index.pug", which will be compiled into "index.html". You can add an individual pug-file (f.e. "test.pug") in the same folder as "index.pug" and it will be compiled into "test.html".
