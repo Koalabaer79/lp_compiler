@@ -1,1 +1,1 @@
-var holyboly=1;1==holyboly&&console.log("Holyboly!");
+console.log("Welcome to the Landingpage Compiler!");

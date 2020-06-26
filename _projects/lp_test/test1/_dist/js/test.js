@@ -1,4 +1,1 @@
-var holyboly = 1;
-if(holyboly == 1){
-    console.log('Holyboly!');
-}
+console.log('Welcome to the Landingpage Compiler!');
