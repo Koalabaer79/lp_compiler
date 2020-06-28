@@ -1,0 +1,77 @@
+doctype html
+html(lang="de")
+    head
+        meta(charset="utf-8")
+        title Landing Page
+        meta(name="description",content="Add description here")
+        meta(name="keywords",content="Add, keywords, here")
+        meta(name="viewport",content="width=device-width, initial-scale=1")
+        link(href="./css/style.css",rel="stylesheet",type="text/css")
+    body#body
+
+        div#background
+            span#text_1.titleText.hidden Welcome to
+            span#text_2.titleText.hidden Landing Page Compiler
+
+        div#container            
+            include ./_shared/menu.pug
+
+            #header
+                div.gradient
+                img.headerImg(src="./assets/header.jpg" alt="Light gulp with world - The Idea of a Landing page compiler")
+                h1 Landing Page Compiler
+                #arrow1.arrow_down
+                    img.arrow(src="./assets/icons/arrow_white.png" alt="arrow down 1")
+
+            #content
+
+                #description.text_container
+                    .text.white
+                        h2 Description of Landing Page Compiler
+                        p The "landing page compiler" is designed to easily programm landing pages or small websites. With Gulp, nodeJS you generate your programmed page and create a fully inline code in just one file. The pure SEO is working perfekt on this site and makes it slim, fast and efficient.
+                        p This small compiler is not build for big and complex websites, which will exceed the functionality. I kept the system simple and fast, for efficient and direct programming of landing-pages.
+                        p You need to have knowledge about SCSS, PUG, and using the terminal to use the Gulp- and node-commands for easy and fast programming.
+                        p It is possible to include JS files, which will also be implemented inline together with CSS in the final HTML code. To keep it fast, it is possible to include Base64 fonts and keep the amount of all uneccessary external links as small as possible.
+                    .icons
+                        #arrow2.arrow_down
+                            img.arrow(src="./assets/icons/arrow_white.png" alt="arrow down 2")
+                
+                #mid1.middleSection.white
+                    .textCenter
+                        h2 Libraries and toolkits LPC uses
+                        p Click on one of the icons to find out more about each topic. You can also find learning material if neccessary and not already known.
+                    .imgIns
+                        a(href="https://www.pugjs.org/" target="_blank" rel="noreferrer noopener")
+                            img(src="./assets/icons/pug.jpg" alt="pug logo")
+                    .imgIns
+                        a(href="https://sass-lang.com/" target="_blank" rel="noreferrer noopener")
+                            img(src="./assets/icons/sass.jpg" alt="sass logo")
+                    .imgIns
+                        a(href="https://gulpjs.com/" target="_blank" rel="noreferrer noopener")
+                            img(src="./assets/icons/gulp.jpg" alt="gulp logo")
+                    .imgIns
+                        a(href="https://nodejs.org/" target="_blank" rel="noreferrer noopener")
+                            img(src="./assets/icons/node.jpg" alt="nodejs logo")
+                    #arrow3.textCenter
+                        img.arrow(src="./assets/icons/arrow_blue.png" alt="arrow down 3")
+
+                #features.text_container
+                    .icons
+                        #arrow4.arrow_down
+                            img.arrow(src="./assets/icons/arrow_white.png" alt="arrow down 4")
+                    .text.white
+                        h2 Features of Landing Page Compiler
+                        h3 PUG Files
+                        p For easy programming this compiler uses PUG files
+                        h3 SCSS
+                        p This landing page compiler uses SCSS stylesheets to enable functions and variables for layouting
+                        h3 Gulp
+                        p With the gulpfile.js it is possible to create new projects, watch and compile PUG files as well as SCSS files
+                        h3 nodeJS
+                        p To export your projects this compiler uses nodeJS to create inline HTML files with all style and js included
+                        h3 Templates
+                        p Use your own templates to use them for new projects
+            
+            include ./_shared/footer.pug
+
+    script(src="./js/scripts.js")

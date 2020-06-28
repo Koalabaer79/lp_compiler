@@ -83,7 +83,8 @@ gulp.task('browserSync', function() {
     console.log(file);
     gulp.watch(process.env.INIT_CWD+'/pug/**/*.pug', gulp.series('pug')).on('change', browserSync.reload);
     gulp.watch(process.env.INIT_CWD+'/scss/*.scss', gulp.series('sass')).on('change', browserSync.reload);
-    gulp.watch(process.env.INIT_CWD+'/js/*.js', gulp.series('copy')).on('change', browserSync.reload);
+    gulp.watch(process.env.INIT_CWD+'/js/*.js', gulp.series('js')).on('change', browserSync.reload);
+    gulp.watch(process.env.INIT_CWD+'/assets/**/*.*', gulp.series('copy')).on('change', browserSync.reload);
     gulp.watch(process.env.INIT_CWD+'/_dist/'+file).on('change', browserSync.reload);
     console.log(colors.green(' Watching landing page'));
 });

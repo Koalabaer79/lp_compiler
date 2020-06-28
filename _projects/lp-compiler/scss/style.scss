@@ -1,0 +1,326 @@
+
+@import "./fonts.scss";
+
+$font_reg: 'Yantramanav', Verdana, Geneva, Tahoma, sans-serif;
+$font_bold: 'Yantramanav-Bold', Verdana, Geneva, Tahoma, sans-serif;
+$main_color: #1d3341;
+$sec_color: #fff;
+
+
+html, body, #container, #div {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #5a6e7a;
+}
+
+#background {
+    background-color: $main_color;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    text-align: center;
+}
+
+.titleText {
+    font-family: $font_bold;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    background-image: url('../assets/animated.webp');
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    background-clip: text;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 12vw;
+	line-height: 0.9;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.white {
+    background-color: $sec_color;
+}
+.blue {
+    background-color: $main_color;
+}
+
+.arrow_down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.arrow{
+    display: inline;
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
+}
+  
+#container {
+    display: none;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    &.display {
+        display: block;
+    }
+
+    #nav {
+        width: 100%;
+        display: block;
+        margin: 0;
+        opacity: 0;
+    
+        .menu {
+    
+            list-style: none;
+            width: auto;
+            margin: 0;
+            padding: 0;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            background-color: $main_color;
+            position: sticky;
+            top: 0;
+    
+            li {
+                float: left;
+    
+                a {
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    display: block;
+                    color: $sec_color;
+                    font-family: $font_reg;
+                    font-size: 20px;
+                }
+    
+                a:hover {
+                    background-color: $sec_color;
+                    color: $main_color;
+                }
+            }
+        }
+    }
+        
+    #header {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        opacity: 0;
+        margin: 0;
+    
+        h1 {
+            font-size: 60px;
+            text-align: center;
+            color: $main_color;
+            position: absolute;
+            top: 30px;
+            width: 100%;
+            @media screen and (max-width: 1279px) {
+                // position: static;
+                top: 0;
+                font-size: 30px;
+            }
+        }
+    
+        .headerImg {
+            margin: 0;
+            width: 100%;
+            display: block;
+        }
+    
+        .gradient {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            background: rgb(29,51,65);
+            background: linear-gradient(180deg, rgba(29,51,65,1) 0%, rgba(9,9,121,0) 100%);
+            @media screen and (max-width: 500px) {
+                height: 20px;
+            }
+        }
+    }
+
+    #content {
+        margin: 0;
+
+        .text_container {
+            opacity: 0;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            
+            & .text {
+                width: calc(100% - 200px);
+                padding: 20px 50px;
+                @media screen and (max-width: 800px) {
+                    padding: 20px;
+                    width: 100%;
+                }
+
+                h3, p {
+                    color: $main_color;
+                    margin: 0;
+                    padding: 0;
+                }
+                p{
+                    margin-bottom: 15px;
+                }
+            }
+
+            .icons {
+                width: 100px;
+                position: relative;
+                background-color: $main_color;
+                @media screen and (max-width: 800px) {
+                    padding: 20px;
+                    width: 100%;
+                    background-color: $sec_color;
+                }
+            }
+
+            .insCenter {
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+            }
+        }
+
+        .middleSection {
+            min-height: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            opacity: 0;
+
+            .textCenter {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .imgIns {
+                width: 25%;
+                text-align: center;
+                padding: 25px 0 50px 0;
+                @media screen and (max-width: 800px) {
+                    width: 50%;
+                }
+            }
+        }
+    }
+
+    footer {
+        background-color: $main_color;
+        display: flex;
+        justify-content: center;
+
+        .section {
+            width: auto;
+            color: $sec_color;
+            margin: 0 20px;
+            padding: 0;
+
+            ul {
+                width: auto;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    list-style: none;
+                    margin: 10px 0;
+
+                    a {
+                        text-decoration: none;
+                        font-family: $font_reg;
+                        color: $sec_color;
+                        padding: 10px 20px;
+                        margin: 0;
+                        padding: 0;
+                        font-size: 20px;
+                    }
+
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+        }
+    }
+
+    h1, h2, h3 {
+        font-family: $font_bold;
+    }
+
+    p{
+        font-family: $font_reg;
+        font-size: 20px;
+        color: $main_color;
+    }
+
+    h2 {
+        font-size: 40px;
+        color: $main_color;
+        margin: 20px 0;
+        @media screen and (max-width: 800px) {
+            font-size: 30px;
+        }
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    hr {
+        background-color: $main_color;;
+    }
+}
+
+.fadeIn{
+    animation: 1s fadeIn forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeOut{
+    animation: 1s fadeOut forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
