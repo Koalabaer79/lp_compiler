@@ -90,4 +90,4 @@ var timeLine = [
 
 timeLine.forEach(el =>  {
     animate(el['id'],el['anim'],el['time']);
-})
+});

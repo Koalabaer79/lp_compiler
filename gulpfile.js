@@ -72,7 +72,6 @@ gulp.task('browserSync', function() {
             baseDir: process.env.INIT_CWD
         },
     })
-    console.log(name);
     if(name == undefined){
         var file = 'index.html';
     }else{
@@ -80,13 +79,12 @@ gulp.task('browserSync', function() {
         var file = name.split('/')[elements-1];
         file = file.replace('pug', 'html');
     }
-    console.log(file);
     gulp.watch(process.env.INIT_CWD+'/pug/**/*.pug', gulp.series('pug')).on('change', browserSync.reload);
     gulp.watch(process.env.INIT_CWD+'/scss/*.scss', gulp.series('sass')).on('change', browserSync.reload);
     gulp.watch(process.env.INIT_CWD+'/js/*.js', gulp.series('js')).on('change', browserSync.reload);
     gulp.watch(process.env.INIT_CWD+'/assets/**/*.*', gulp.series('copy')).on('change', browserSync.reload);
     gulp.watch(process.env.INIT_CWD+'/_dist/'+file).on('change', browserSync.reload);
-    console.log(colors.green(' Watching landing page'));
+    console.log(colors.green(' Watching '+file));
 });
 
 // Watch Project -> including SASS, PUG and BROWSERSYNC Tasks

@@ -20,6 +20,7 @@ html(lang="de")
                 div.gradient
                 img.headerImg(src="./assets/header.jpg" alt="Light gulp with world - The Idea of a Landing page compiler")
                 h1 Landing Page Compiler
+                div.gradient_2
                 #arrow1.arrow_down
                     img.arrow(src="./assets/icons/arrow_white.png" alt="arrow down 1")
 
@@ -74,13 +75,14 @@ html(lang="de")
                 
                 #mid2.middleSection.blue
                     .textCenter
-                        iframe.banner(width="970" height="90" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="./assets/banners/970x90/index.html")
+                        #download
+                            a.download(href="https://github.com/Koalabaer79/lp_compiler" title="Download it from GitHub" target="_blank" rel="noopener noreferrer") Download the Landing Page Compiler
                         #arrow5.arrow_div
                             img.arrow(src="./assets/icons/arrow_white.png" alt="arrow down 5")
                         
                 #commands.text_container
                     .text.white
-                        h2 Commands
+                        h2 Commands to control the Landing Page Compiler
                         h3 Getting Started with
                         p.code npm install
                         p To ensure that you have all neccessary tools
@@ -101,6 +103,13 @@ html(lang="de")
                         h3 nodeJS Commands
                         p.code node bakery.js --project <span class="file">test1</span>
                         p Export desired project and create inline HTML code including all CSS code, JS code and images in a timestamped "_export" directory.<br />Copy the complete path of project directory "lp-compiler" (for example)</i>
+
+                        h3 PUG files
+                        p I've created the "index.pug", which will be compiled into "index.html". You can add an individual PUG file (f.e. "test.pug") in the same folder as "index.pug" and it will be compiled into "test.html".
+                        p The folder "_shared" includes the menu and footer pug-file, which can be included in your individual PUG files and you only need to change the menu once, as it is implemented in all parent files.
+
+                        h3 SCSS files
+                        p I only have one SCSS file, which is included in the pug-file. You can feel free to add more SCSS files, maybe in a separate folder, and import them into your "style.scss". Then it will be included automatically inline in your exported HTML file.
                     
                     .icons
             
