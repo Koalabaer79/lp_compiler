@@ -5,6 +5,7 @@ $font_reg: 'Yantramanav', Verdana, Geneva, Tahoma, sans-serif;
 $font_bold: 'Yantramanav-Bold', Verdana, Geneva, Tahoma, sans-serif;
 $main_color: #1d3341;
 $sec_color: #fff;
+$side_color: #b8b8b8;
 
 
 html, body, #container, #div {
@@ -13,7 +14,7 @@ html, body, #container, #div {
 }
 
 body {
-    background-color: #5a6e7a;
+    background-color: #fff;
 }
 
 #background {
@@ -72,6 +73,14 @@ body {
 .arrow{
     display: inline;
     @media screen and (max-width: 800px) {
+        display: none;
+    }
+}
+
+.banner {
+    margin: 50px 0;
+    display: inline-block;
+    @media screen and (max-width: 970px) {
         display: none;
     }
 }
@@ -188,6 +197,18 @@ body {
                 }
                 p{
                     margin-bottom: 15px;
+
+                    &.code {
+                        background-color: $main_color;
+                        padding: 5px 10px;
+                        color: $sec_color;
+                        margin-bottom: 0;
+                        // font-style: italic;
+                        font-family: 'Courier New';
+                    }
+                    & .file {
+                        color: $side_color;
+                    }
                 }
             }
 

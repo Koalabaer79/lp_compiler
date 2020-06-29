@@ -17,8 +17,8 @@ function animate(id,anim,time) {
     }, time);
 }
 
-var elements = [ 'nav', 'header', 'description', 'mid1', 'features' ];
-var sections = {description:'arrow1', mid1:'arrow2', features:'arrow3'};
+var elements = [ 'nav', 'header', 'description', 'mid1', 'features', 'mid2', 'commands' ];
+var sections = {description:'arrow1', mid1:'arrow2', features:'arrow3', mid2:'arrow4', commands:'arrow5'};
 
 if(window.innerWidth >= 800){
     setTimeout(function(){
