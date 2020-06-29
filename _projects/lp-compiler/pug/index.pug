@@ -36,10 +36,10 @@ html(lang="de")
                         #arrow2.arrow_down
                             img.arrow(src="./assets/icons/arrow_white.png" alt="arrow down 2")
                 
-                #mid1.middleSection.white
+                #mid1.middleSection.blue
                     .textCenter
-                        h2 Libraries and toolkits LPC uses
-                        p Click on one of the icons to find out more about each topic. You can also find learning material if neccessary and not already known.
+                        h2.blue Libraries and toolkits LPC uses
+                        p.blue Click on one of the icons to find out more about each topic. You can also find learning material if neccessary and not already known.
                     .imgIns
                         a(href="https://www.pugjs.org/" target="_blank" rel="noreferrer noopener")
                             img(src="./assets/icons/pug.jpg" alt="pug logo")
@@ -52,8 +52,8 @@ html(lang="de")
                     .imgIns
                         a(href="https://nodejs.org/" target="_blank" rel="noreferrer noopener")
                             img(src="./assets/icons/node.jpg" alt="nodejs logo")
-                    #arrow3.textCenter
-                        img.arrow(src="./assets/icons/arrow_blue.png" alt="arrow down 3")
+                    #arrow3.arrow_div
+                        img.arrow(src="./assets/icons/arrow_white.png" alt="arrow down 3")
 
                 #features.text_container
                     .icons
@@ -72,11 +72,11 @@ html(lang="de")
                         h3 Templates
                         p Use your own templates to use them for new projects
                 
-                #mid2.middleSection
+                #mid2.middleSection.blue
                     .textCenter
                         iframe.banner(width="970" height="90" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="./assets/banners/970x90/index.html")
-                        #arrow5.textCenter
-                            img.arrow(src="./assets/icons/arrow_blue.png" alt="arrow down 5")
+                        #arrow5.arrow_div
+                            img.arrow(src="./assets/icons/arrow_white.png" alt="arrow down 5")
                         
                 #commands.text_container
                     .text.white
@@ -97,10 +97,12 @@ html(lang="de")
 
                         p.code gulp watch --file <span class="file">xyz.html</span>
                         p Compiling all files from project into the "_dist" directory and watch specified "xyz.html"<br />xyz.html --> full path of html file required
+
+                        h3 nodeJS Commands
+                        p.code node bakery.js --project <span class="file">test1</span>
+                        p Export desired project and create inline HTML code including all CSS code, JS code and images in a timestamped "_export" directory.<br />Copy the complete path of project directory "lp-compiler" (for example)</i>
                     
                     .icons
-                        #arrow6.arrow_down
-                            img.arrow(src="./assets/icons/arrow_white.png" alt="arrow down 6")
             
             include ./_shared/footer.pug
 

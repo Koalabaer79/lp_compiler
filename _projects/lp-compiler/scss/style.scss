@@ -6,6 +6,7 @@ $font_bold: 'Yantramanav-Bold', Verdana, Geneva, Tahoma, sans-serif;
 $main_color: #1d3341;
 $sec_color: #fff;
 $side_color: #b8b8b8;
+$bg_color: #485969;
 
 
 html, body, #container, #div {
@@ -14,7 +15,7 @@ html, body, #container, #div {
 }
 
 body {
-    background-color: #fff;
+    background-color: $bg_color;
 }
 
 #background {
@@ -58,9 +59,11 @@ body {
 
 .white {
     background-color: $sec_color;
+    color: $main_color !important;
 }
 .blue {
     background-color: $main_color;
+    color: $sec_color !important;
 }
 
 .arrow_down {
@@ -240,12 +243,27 @@ body {
             .textCenter {
                 width: 100%;
                 text-align: center;
+                margin-top: 40px;
+            }
+            .arrow_div {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
             }
             
             .imgIns {
                 width: 25%;
                 text-align: center;
                 padding: 25px 0 50px 0;
+
+                img {
+                    border: 15px solid $sec_color;
+                    border-radius: 10px;
+                    &:hover {
+                        box-shadow: 0 0 10px $sec_color;
+                    }
+                }
+
                 @media screen and (max-width: 800px) {
                     width: 50%;
                 }
