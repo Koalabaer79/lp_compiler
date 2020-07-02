@@ -1,7 +1,7 @@
 // Easy Landing Page Programming by Lars Urban
 // Feel free to use and change the code
 
-console.log('Welcome to the Landingpage Compiler!');
+console.info('Welcome to the Landingpage Compiler!');
 
 // Declare arrays and variables needed
 
@@ -20,7 +20,7 @@ const intro = urlParams.get('intro');
 
 var myCookie = document.cookie.indexOf("intro=");
 
-// Set timeline for intro or not
+// Set timeline for intro or not    
 
 if (myCookie < 0 || intro === 'show') {
     timeLine = [
@@ -98,8 +98,7 @@ function isInViewport(elem) {
         bounding.left >= 0 &&
         bounding.bottom <= ((window.innerHeight) || document.documentElement.clientHeight) &&
         bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-    
+    );    
 };
 
 // Function if element is in partly in viewport ( when scrolling )
@@ -116,12 +115,24 @@ function isElementXPercentInViewport (el, percentVisible) {
 };
 
 // Function for animating Intro
-
+var timeString = [1];
 function animate(id,anim,time) {
-    setTimeout(function(){
+    timer = setTimeout(function(){
         var el = document.getElementById(id);
         el.classList.add(anim); 
     }, time);
+    timeString.push(timer);
+}
+
+// Stop Intro Animations
+
+function stop() {
+    timeString.forEach(timer => {
+        clearTimeout(timer);
+    });
+    document.getElementById('background').classList.add('hide');
+    document.getElementById('container').classList.add('display');
+    fullyInViewport();
 }
 
 // Function to set intro-cookie ( expiring in 24 hours )
@@ -133,36 +144,47 @@ function setCookie() {
     document.cookie = "intro=shown; " + expires;
 }
 
+// Function to fade in elements fully in viewport
+function fullyInViewport() {
+    elements.forEach(el => {
+        var elem = document.getElementById(el);
+        if (isInViewport(elem)) {
+            elem.classList.add('fadeIn');
+            if(sections[el] !== undefined) {
+                document.getElementById(sections[el]).classList.add('hidden');
+            }
+        }
+    });
+}
+
+// Function to fade in elements partly in viewport
+
+function partlyInViewport() {
+    elements.forEach(el => {
+        var elem = document.getElementById(el);
+        if (isElementXPercentInViewport(elem, 50)) {
+            elem.classList.add('fadeIn');
+            if(sections[el] !== undefined) {
+                document.getElementById(sections[el]).classList.add('hidden');
+            }
+        }
+    });
+}
+
 // If screen-width is bigger than 800 pixel
 
 if(window.innerWidth >= 800){
 
     // Run fadeIn of fully visible elements after video
 
-    setTimeout(function(){
-        elements.forEach(el => {
-            var elem = document.getElementById(el);
-            if (isInViewport(elem)) {
-                elem.classList.add('fadeIn');
-                if(sections[el] !== undefined) {
-                    document.getElementById(sections[el]).classList.add('hidden');
-                }
-            }
-        });
+    var showPage = setTimeout(function(){
+        fullyInViewport();
     }, timeShow);
 
     // Event listener on scroll to display hidden elements when 50% visible
 
     window.addEventListener("scroll", function(event) {
-        elements.forEach(el => {
-            var elem = document.getElementById(el);
-            if (isElementXPercentInViewport(elem, 50)) {
-                elem.classList.add('fadeIn');
-                if(sections[el] !== undefined) {
-                    document.getElementById(sections[el]).classList.add('hidden');
-                }
-            }
-        });
+        partlyInViewport();
     });
 }else{
 
