@@ -165,17 +165,19 @@ function readFilesSync(dir) {
         }
         else{
             newDir = dir+extension+'/';
-            fs.readdirSync(newDir).forEach(filename => {
-                var content = fs.readFileSync(newDir+filename, 'utf8');                
-                count = filename.split('.').length;
-                extension = filename.split('.')[count-1];
-                if(extension === 'css'){
-                    files[filename] = content;
-                }
-                if(extension === 'js' && filename.includes('-min')){
-                    files[filename] = content;
-                }               
-            });
+            if(extension !== 'assets') {
+                fs.readdirSync(newDir).forEach(filename => {
+                    var content = fs.readFileSync(newDir+filename, 'utf8');                
+                    count = filename.split('.').length;
+                    extension = filename.split('.')[count-1];
+                    if(extension === 'css'){
+                        files[filename] = content;
+                    }
+                    if(extension === 'js' && filename.includes('-min')){
+                        files[filename] = content;
+                    }               
+                });
+            }
         }    
     });
     return files;
@@ -201,6 +203,6 @@ function createFiles(path,data,timeStamp){
 // Copy assets into export folder
 function copyAssets(path,timeStamp) {
     console.log(timeStamp)    
-    return gulp.src(path+'/assets/*.*')
+    return gulp.src(path+'/assets/**/*.*')
         .pipe(gulp.dest(path+'/_export/'+timeStamp+'/assets'));
 }

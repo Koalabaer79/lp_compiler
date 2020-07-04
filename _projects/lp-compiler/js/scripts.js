@@ -25,32 +25,32 @@ var myCookie = document.cookie.indexOf("intro=");
 if (myCookie < 0 || intro === 'show') {
     timeLine = [
         {
-            id: "text_1",
+            id: "text1",
             anim: "fadeIn",
             time: 200
         },
         {
-            id: "text_1",
+            id: "text1",
             anim: "fadeOut",
             time: 2200
         },
         {
-            id: "text_2",
+            id: "text2",
             anim: "fadeIn",
             time: 3200
         },
         {
-            id: "text_2",
+            id: "text2",
             anim: "fadeOut",
             time: 5200
         },
         {
-            id: "text_3",
+            id: "text3",
             anim: "fadeIn",
             time: 6200
         },
         {
-            id: "text_3",
+            id: "text3",
             anim: "fadeOut",
             time: 8200
         },
@@ -200,3 +200,10 @@ if(window.innerWidth >= 800){
 timeLine.forEach(el =>  {
     animate(el['id'],el['anim'],el['time']);
 });
+
+// Navigation for mobile
+
+function openNav(){
+    var el = document.getElementById('menu');
+    el.classList.toggle('display');
+}

@@ -2,7 +2,7 @@ doctype html
 html(lang="de")
     head
         meta(charset="utf-8")
-        title Landing Page
+        title Landing Page Compiler
         meta(name="description",content="Add description here")
         meta(name="keywords",content="Add, keywords, here")
         meta(name="viewport",content="width=device-width, initial-scale=1")
@@ -11,9 +11,12 @@ html(lang="de")
 
         div#background(onClick="stop()")
             div#stopIntro Click to stop Intro
-            div#text_1.titleText.hidden Welcome to the
-            div#text_2.titleText.hidden Landing Page Compiler
-            div#text_3.titleText.hidden Easy LP Programming!
+            div#text1
+                .titleText Lars Urban presents
+            div#text2
+                .titleText Landing Page Compiler
+            div#text3
+                .titleText Easy LP Programming!
 
         div#container            
             include ./_shared/menu.pug
