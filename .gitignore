@@ -2,3 +2,5 @@
 node_modules
 
 _export
+_dist
+lp-compiler
