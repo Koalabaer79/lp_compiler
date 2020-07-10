@@ -42,7 +42,7 @@ gulp.task('pug', function() {
 // Copy assets
 gulp.task('copy', function() {
     if(fs.existsSync(projectFolder) && projectFolder.includes('_projects')){
-        return gulp.src(projectFolder+'/assets/*.*')
+        return gulp.src(projectFolder+'/assets/**/*.*')
             .pipe(gulp.dest(projectFolder+'/_dist/assets/'));
     }else{
         return console.log(colors.redBG('Maybe switch into your current project folder?'));
