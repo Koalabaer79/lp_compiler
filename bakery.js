@@ -2,7 +2,7 @@
 const { PerformanceObserver, performance } = require('perf_hooks');
 var colors = require('colors');
 const fs = require('fs');
-var path = process.argv[3]
+var path = process.argv[3];
 var project = process.argv[3]+'/_dist/';
 var gulp = require('gulp');
 
