@@ -146,6 +146,8 @@ function replaceContent(data,files) {
                         content = content.replace(tag, jsContent);
                     }
                 }
+
+                content = content.replace('../', "./");
             }
         }
         compiledFiles[file] = content;
