@@ -3,16 +3,17 @@ const { PerformanceObserver, performance } = require('perf_hooks');
 var colors = require('colors');
 const fs = require('fs');
 var path = process.argv[3];
-var project = process.argv[3]+'/_dist/';
+var distFolder = '_projects/'+process.argv[3]+'/_dist/';
+var projectFolder = '_projects/'+process.argv[3]+'/';
 var gulp = require('gulp');
 
 console.clear()
 
-if(checkProject(project) != ""){
+if(checkProject(distFolder) === true) {
     // Find project name and read content of "_dist" folder into "data" object
     projectName = nameOfProject(path);
     console.log(colors.yellow('Compiling project: '+projectName));
-    const data = readFilesSync(project);
+    const data = readFilesSync(distFolder);
 
     // If "data" has content, start process - if not, show error
     if(data != "" || data != "undefined") {
@@ -55,10 +56,10 @@ if(checkProject(project) != ""){
         
         // Copy Assets if present
         var tComplete_3 = 0;
-        var assets = checkAssets(project+'assets');
+        var assets = checkAssets(distFolder+'assets');
         if(assets != true) {
             var t4 = performance.now();
-            copyAssets(path,dateTime);
+            copyAssets(distFolder,dateTime);
             var t5 = performance.now();
             tComplete_3 = (t5-t4);
             tComplete_3 = Math.round(tComplete_3 * 100) / 100
@@ -81,7 +82,7 @@ if(checkProject(project) != ""){
 }
 
 // Function for if asset folder is empty
-function checkAssets(path){
+function checkAssets(path) {
     fs.readdirSync(path, function(err, files) {
         if (err) {
            console.log(colors.red('No asset folder found!'))
@@ -187,7 +188,7 @@ function readFilesSync(dir) {
 
 // Create new "HTML" files in export folder
 function createFiles(path,data,timeStamp){
-    var dir = path + '/_export';
+    var dir = projectFolder + '/_export';
     var exportPath = dir + '/' + timeStamp + '/';
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir);
@@ -204,7 +205,6 @@ function createFiles(path,data,timeStamp){
 
 // Copy assets into export folder
 function copyAssets(path,timeStamp) {
-    console.log(timeStamp)    
     return gulp.src(path+'/assets/**/*.*')
         .pipe(gulp.dest(path+'/_export/'+timeStamp+'/assets'));
 }
